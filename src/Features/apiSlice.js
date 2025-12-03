@@ -21,7 +21,7 @@ export const streamApi = createApi({
           // Dev/prod handling for Vercel
           const isDev =
             import.meta.env.DEV || window.location.hostname === "localhost";
-          const url = isDev ? "http://localhost:8080/stream" : "https://limelight-sse-server.onrender.com/" ; // or your public CORS proxy if you have one
+          const url = "http://localhost:8080/stream" || "https://limelight-sse-server.onrender.com/" ; // or your public CORS proxy if you have one
 
           if (!url) {
             console.warn(
