@@ -10,7 +10,7 @@ import ExportButton from "../UI/ExportButton.jsx";
 export default function DashboardLayout() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <header className="bg-white dark:bg-gray-800 shadow-sm border-b">
+      <header className="bg-white dark:bg-gray-700 shadow-sm border-b">
         <div
           aria-label="Device dashboard main content"
           className="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4"
