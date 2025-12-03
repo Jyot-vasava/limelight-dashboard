@@ -16,7 +16,11 @@ export const streamApi = createApi({
 
           // Use replay mode if ?replay=1 in URL (for demo without server)
           const urlParams = new URLSearchParams(window.location.search);
-          if (urlParams.get("replay")) return;
+
+          if (urlParams.get("replay") || window.location.pathname.endsWith("replay.html")) {
+              return;
+          }
+
 
           // Dev/prod handling for Vercel
           const isDev =
