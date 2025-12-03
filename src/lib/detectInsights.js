@@ -19,28 +19,28 @@ const findContiguous = (points, condition) => {
 
 export const detectInsights = (points) => {
   // DEMO MODE: Force all 3 insights to appear instantly
-  if (points.length > 60) {
-    return [
-      {
-        type: "idle",
-        title: "Prolonged Idle Detected",
-        desc: "Machine was IDLE for 28 minutes",
-        severity: "warning",
-      },
-      {
-        type: "peak",
-        title: "High Peak Demand",
-        desc: "Max 15-min demand: 87.4 kW at 14:32",
-        severity: "info",
-      },
-      {
-        type: "imbalance",
-        title: "Severe Phase Imbalance",
-        desc: "Imbalance >15% for 4+ min — check connections!",
-        severity: "error",
-      },
-    ];
-  }
+  // if (points.length > 60) {
+  //   return [
+  //     {
+  //       type: "idle",
+  //       title: "Prolonged Idle Detected",
+  //       desc: "Machine was IDLE for 28 minutes",
+  //       severity: "warning",
+  //     },
+  //     {
+  //       type: "peak",
+  //       title: "High Peak Demand",
+  //       desc: "Max 15-min demand: 87.4 kW at 14:32",
+  //       severity: "info",
+  //     },
+  //     {
+  //       type: "imbalance",
+  //       title: "Severe Phase Imbalance",
+  //       desc: "Imbalance >15% for 4+ min — check connections!",
+  //       severity: "error",
+  //     },
+  //   ];
+  // }
 
   // REAL LOGIC BELOW 
   const insights = [];
