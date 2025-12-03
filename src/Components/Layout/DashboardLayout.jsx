@@ -4,8 +4,8 @@ import PhaseCurrentChart from "../Charts/PhaseCurrentChart.jsx";
 import ThroughputSpark from "../Charts/ThroughputSpark.jsx";
 import InsightsPanel from "../Insights/InsightsPanel.jsx";
 import WindowSelector from "../ui/WindowSelector.jsx";
-import GapBadge from "../ui/GapBadge.jsx";
-import ExportButton from "../ui/ExportButton.jsx";
+import GapBadge from "../UI/GapBadge.jsx";
+import ExportButton from "../UI/ExportButton.jsx";
 
 export default function DashboardLayout() {
   return (
