@@ -3,7 +3,7 @@ import PowerChart from "../Charts/PowerChart.jsx";
 import PhaseCurrentChart from "../Charts/PhaseCurrentChart.jsx";
 import ThroughputSpark from "../Charts/ThroughputSpark.jsx";
 import InsightsPanel from "../Insights/InsightsPanel.jsx";
-import WindowSelector from "../ui/WindowSelector.jsx";
+import WindowSelector from "../UI/WindowSelector.jsx";
 import GapBadge from "../UI/GapBadge.jsx";
 import ExportButton from "../UI/ExportButton.jsx";
 
