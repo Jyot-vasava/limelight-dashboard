@@ -8,6 +8,7 @@ export default function WindowSelector() {
   return (
     <select
       value={current}
+      aria-label="Select data window duration"
       onChange={(e) => dispatch(setWindowMinutes(Number(e.target.value)))}
       className="px-3 py-2 border rounded-lg bg-white dark:bg-gray-400"
     >

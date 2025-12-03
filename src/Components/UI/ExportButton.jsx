@@ -17,6 +17,7 @@ export default function ExportButton() {
   return (
     <button
       onClick={exportCSV}
+      aria-label="Export dashboard data as CSV"
       className="px-4 py-2 bg-gray-400 text-black rounded-lg hover:bg-gray-500"
     >
       Export CSV
