@@ -1,16 +1,58 @@
-# React + Vite
+# LimelightIT — Device Stream Dashboard  
+**Real-time 1 Hz Industrial Dashboard** | React + Vite + RTK Query + uPlot + Tailwind  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live URL**: https://limelight-dashboard-omega.vercel.app/
+**Reply URL**: https://limelight-dashboard-omega.vercel.app/?replay=1  
+**GitHub**: https://github.com/Jyot-vasava/limelight-dashboard  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### KPI Calculation Methods (as requested)
 
-## React Compiler
+- **Uptime / Idle / Off %** → time-weighted duration of each state in window  
+- **Average kW** → time-weighted average (not sample average)  
+- **Energy (kWh)** → `max(kwh_total) − min(kwh_total)` in window (correct register method)  
+- **PF average** → arithmetic mean over RUN + IDLE samples only (OFF ignored)  
+- **Throughput** → `Δcount_total / window_minutes` + rolling 60-sec rate  
+- **Phase imbalance %** → `(max−min)/avg × 100` of latest currents  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+All calculations in pure functions → `src/lib/calculateKPIs.js`
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Auto-Insights Implemented
+
+1. **Prolonged Idle** → ≥25 min contiguous IDLE (28 min detected)  
+2. **Peak 15-min Demand** → rolling 15-min average kW, max reported  
+3. **Severe Phase Imbalance** → >15% for ≥2 min (multiple events in data)  
+
+**Demo note**: For the video, I temporarily forced all 3 insights to appear after 60 points (so they show instantly). Real logic uses full thresholds — both versions in code, clearly commented.
+
+---
+
+### SSE_live_server (works on vercel with local server)
+
+# Start the SSE server (included path:"limelight-dashboard/public/data/live_sse_server.js")
+node "live_sse_server.js"
+# Then open this link
+URL:https://limelight-dashboard-omega.vercel.app/
+
+
+### Replay Mode (works on Vercel without local server)
+Just add `?replay=1` to the URL:  
+https://limelight-dashboard-omega.vercel.app/?replay=1
+
+---
+
+### Tech Stack (chosen for performance & production readiness)
+
+- **React 18 + Vite** → fastest dev server  
+- **RTK Query** → true real-time streaming with automatic cleanup  
+- **uPlot** → 11 kB, 60 FPS even with 5000+ points (Recharts would lag)  
+- **Tailwind CSS** → responsive, dark mode ready, beautiful out of the box  
+- **Redux Toolkit** → clean, scalable state management  
+
+---
+
+
+
