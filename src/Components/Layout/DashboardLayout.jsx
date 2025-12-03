@@ -11,10 +11,7 @@ export default function DashboardLayout() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <header className="bg-white dark:bg-gray-700 shadow-sm border-b">
-        <div
-          aria-label="Device dashboard main content"
-          className="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4"
-        >
+        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
             LimelightIT — Device Dashboard
           </h1>
@@ -33,17 +30,21 @@ export default function DashboardLayout() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+      <main
+        aria-label="Device dashboard main content"
+        id="main-content"
+        className="max-w-7xl mx-auto px-4 py-6 space-y-6"
+      >
         <KpiGrid />
         <InsightsPanel />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-6">
-            <PowerChart />
-            <PhaseCurrentChart />
+            <PowerChart aria-label="Power usage over time" role="img" />
+            <PhaseCurrentChart aria-label="Phase current over time" role="img" />
           </div>
           <div className="space-y-6">
-            <ThroughputSpark />
+            <ThroughputSpark aria-label="Throughput over time" role="img" />
           </div>
         </div>
       </main>

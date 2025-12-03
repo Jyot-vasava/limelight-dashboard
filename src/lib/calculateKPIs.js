@@ -9,7 +9,7 @@ export const calculateKPIs = (points, windowMin = 15) => {
       energyKwh: 19.847,
       avgPf: 0.918,
       throughput: 42.6,
-      imbalance: 18.7,
+      imbalance: 40,
     };
   }
 
