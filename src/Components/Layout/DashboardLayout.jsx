@@ -2,7 +2,7 @@ import KpiGrid from "../KPI/KpiGrid.jsx";
 import PowerChart from "../Charts/PowerChart.jsx";
 import PhaseCurrentChart from "../Charts/PhaseCurrentChart.jsx";
 import ThroughputSpark from "../Charts/ThroughputSpark.jsx";
-import InsightsPanel from "../insights/InsightsPanel.jsx";
+import InsightsPanel from "../Insights/InsightsPanel.jsx";
 import WindowSelector from "../ui/WindowSelector.jsx";
 import GapBadge from "../ui/GapBadge.jsx";
 import ExportButton from "../ui/ExportButton.jsx";
