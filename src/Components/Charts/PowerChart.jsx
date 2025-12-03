@@ -1,4 +1,3 @@
-// src/components/charts/PowerChart.jsx
 import { useEffect, useRef, useState } from "react";
 import { useGetStreamQuery } from "../../Features/apiSlice";
 import uPlot from "uplot";

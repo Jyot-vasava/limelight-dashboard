@@ -1,4 +1,3 @@
-// src/components/charts/PhaseCurrentChart.jsx
 import { useEffect, useRef } from "react";
 import { useGetStreamQuery } from "../../Features/apiSlice";
 import uPlot from "uplot";

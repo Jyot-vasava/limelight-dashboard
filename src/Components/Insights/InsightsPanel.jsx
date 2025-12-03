@@ -26,7 +26,7 @@ export default function InsightsPanel() {
   return (
     <section aria-labelledby="insights-heading">
       <h2 id="insights-heading" className="text-xl font-bold mb-4">
-        Auto Insights
+         Insights
       </h2>
       <div className="space-y-3">
         {insights.map((ins, i) => (
